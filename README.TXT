@@ -27,6 +27,7 @@ To Do's:
 6.) slowly introduce these new weapons into the game
 7.) actually balance the upgrade system.
 8.) buff the new weapons, but limit the amount of ammo for them. Players would have to use it sparingly, but the normal bow would have the regular ammunition.
+need to space out the move from scared player to overpowered.
 9.) possibly create an arrow storage box(es), which would require players to go to them to pick up more ammunition. Could then add in quiver capaciy upgrade.
 10.) possibly add in animations for drawing back the bows.
 11.) assuming number ten, require the player to hold down the space bar to draw back the bow. If it is not drawn all the way back, it will not fire. Let go 
