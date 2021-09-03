@@ -23,7 +23,6 @@ public class player extends AnimatedActor
      */
     public void act() 
     {
-       move();
        animate();
        reload();
        upgrade();
@@ -80,6 +79,7 @@ public class player extends AnimatedActor
             || (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")))
             {
                 animateRUN(1,1);
+                move();
             } else 
             {
                 animateSTND(1,1);
@@ -120,10 +120,6 @@ public class player extends AnimatedActor
         if (getY() > 760) //pushes the player back into the allowed area if it moves too far
         {
             setLocation(getX(),getY()-playerSpeed);
-        }
-        if (Greenfoot.isKeyDown("p"))
-        {
-            Greenfoot.stop();
         }
       }
     }
@@ -230,6 +226,7 @@ public class player extends AnimatedActor
         }
     }
     public void spawnEnemy() // spawns maves of enemies at certain times
+    // THIS ONE NEEDS HUGE IMPROVEMENTS!! use higher or lower guesser to reduce the amount of if statements needed. same with check kills method. possibly make if the number is divisible by three?
     {
         if(pause == false)
         {
@@ -293,6 +290,10 @@ public class player extends AnimatedActor
         if(wait == 1980)
         {
             getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+        }
+        if (Greenfoot.isKeyDown("p"))
+        {
+            Greenfoot.stop();
         }
         // final boss
         if(wait == 2899)

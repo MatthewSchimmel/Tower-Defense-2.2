@@ -32,3 +32,4 @@ need to space out the move from scared player to overpowered.
 10.) possibly add in animations for drawing back the bows.
 11.) assuming number ten, require the player to hold down the space bar to draw back the bow. If it is not drawn all the way back, it will not fire. Let go 
      of space to fire (for all regular bows), but for crossbows holding down will reload, then player must release space and press it to fire. 
+12.) let player pull back bow super far for critical hit, extra fast arrow that deals double damage
