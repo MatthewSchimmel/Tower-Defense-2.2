@@ -20,6 +20,7 @@ To Do's:
 	i.) See if I can make the health bar of the zombies a rectangle method. it's possible for the final boss, just find a way to move it.
 	ii.)See if you can change the font of the upgrade screen. Something with appreciated style could replace the very many classes with organic numbers.
 	    New logic would be necessary, but would greatly trim down the game.
+	iii.) add notification that extra chance has been used.
 2.) add shotgun bow that shoots three, short range bolts
 3.) add crossbow that shoots more damaging, higher range, slower reloading bolts.
 4.) add selector menu that allows player to switch between unlocked bow types with number keys 1, 2, and 3

@@ -225,81 +225,94 @@ public class player extends AnimatedActor
             arrowDamage = 12;
         }
     }
-    public void spawnEnemy() // spawns maves of enemies at certain times
-    // THIS ONE NEEDS HUGE IMPROVEMENTS!! use higher or lower guesser to reduce the amount of if statements needed. same with check kills method. possibly make if the number is divisible by three?
+    public void spawnEnemy() 
+    //same with check kills method. possibly make if the number is divisible by three?
     {
         if(pause == false)
         {
            wait++;
         }
-        // first wave
-        if(wait == 70)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 120)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 170)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        // second wave
-        if(wait == 900)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 950)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1000)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1060)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        // third wave
-        if(wait == 1730)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1780)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1830)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1880)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1930)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1980)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
-        if(wait == 1980)
-        {
-            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
-        }
         if (Greenfoot.isKeyDown("p"))
         {
             Greenfoot.stop();
         }
-        // final boss
-        if(wait == 2899)
+        // spawns waves of enemies using a new number guesser to reduce 'if' statements ran
+        if(wait < 1750)
         {
-            getWorld().addObject(new superzombie(),1599,Greenfoot.getRandomNumber(700)+100);
-            getWorld().addObject(new HealthBar(), 920,50);
+            if(wait < 925 )
+            {
+                if(wait <150 )
+                {            
+                    if(wait == 70 )
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    } else if(wait == 120)
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    }
+                }    else if(wait > 150 )
+                    {
+                    if(wait == 170 )
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    } else if(wait == 900)
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    }
+                }
+            }  else if(wait > 925)
+                {
+                    if(wait < 1030)
+                    {
+                        if(wait == 950)
+                        {
+                            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                        } else if(wait == 1000)
+                        {
+                            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                        }
+                        } else if(wait > 1030)
+                    {
+                        if(wait == 1730)
+                        {
+                            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                        } else if(wait == 1780)
+                        {
+                            getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                        }
+                    }
+                 }
+        } else
+        {
+            if(wait < 1940 )
+            {
+                if(wait <= 1900)
+                {
+                    if(wait == 1830)
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    } else if(wait == 1880)
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    }
+                } else if(wait == 1930)
+                {
+                    getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                }
+            } else if(wait < 2900)
+            {
+                if(wait == 1950)
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    } else if(wait == 1980)
+                    {
+                        getWorld().addObject(new zombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    } else if(wait == 2899) // final boss
+                    {
+                    getWorld().addObject(new superzombie(),1599,Greenfoot.getRandomNumber(700)+100);
+                    getWorld().addObject(new HealthBar(), 920,50);
+                    }
+            }
         }
     }
 }
