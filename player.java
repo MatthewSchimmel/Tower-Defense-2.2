@@ -71,8 +71,8 @@ public class player extends AnimatedActor
     {
        return playerSpeed;
     }
-    public void animate()// siwtches from default animation to moving animation accordingly
-    {
+    public void animate()
+    { // switches from default animation to moving animation accordingly
             if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")
             || Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")
             || Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")
@@ -85,8 +85,8 @@ public class player extends AnimatedActor
                 animateSTND(1,1);
             }
     }
-    public void move() // moves the player around the allowed area
-    {
+    public void move() 
+    {// moves the player around the allowed area
         if (pause == false)
         {
         if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
@@ -123,16 +123,16 @@ public class player extends AnimatedActor
         }
       }
     }
-    public void fire() // allowes the player to fire his bow
-    {
+    public void fire() 
+    {// allowes the player to fire his bow
         if (Greenfoot.isKeyDown("space"))
         {
             getWorld().addObject(new arrow(),getX() + 3,getY() + 20);
             fireRate = setFireRate;
         }
     }
-    public void reload() //manages the time needed to reload before the next shot.
-    {
+    public void reload()
+    { //manages the time needed to reload before the next shot.
       if (pause == false)
       {
         if (fireRate==0)
@@ -144,8 +144,8 @@ public class player extends AnimatedActor
         }
       }
     }
-    public void checkKills() // at intervals of kills, gives the player another upgrade point and displays the options
-    {
+    public void checkKills() 
+    {// at intervals of kills, gives the player another upgrade point and displays the options
         if (kills == 3)
         {
             upgradePoints++;
@@ -212,8 +212,7 @@ public class player extends AnimatedActor
              destroyBoolean = true;
         }
     }
-    public void updateArrowDamage()
-    {
+    public void updateArrowDamage() {
         if (arrowDamageUpgradeLevel == 2)
         {
             arrowDamage = 4;
@@ -225,10 +224,8 @@ public class player extends AnimatedActor
             arrowDamage = 12;
         }
     }
-    public void spawnEnemy() 
-    //same with check kills method. possibly make if the number is divisible by three?
-    {
-        if(pause == false)
+    public void spawnEnemy() {//same with check kills method. possibly make if the number is divisible by three?
+            if(pause == false)
         {
            wait++;
         }
