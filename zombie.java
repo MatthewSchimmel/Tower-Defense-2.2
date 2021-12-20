@@ -13,7 +13,6 @@ public class zombie extends Animatedzombie
         update();
         die();
         animateZOMB(0,0);
-
     }    
     public void die() // facilitates the taking damage and dying feature
     {
@@ -51,6 +50,17 @@ public class zombie extends Animatedzombie
     }
     public void update()
     {
+        int tempHealth = 20;
+       int healthBarWidth = 80;
+       int healthBarHeight = 10;
+       int pixelsPerHealthPoint = healthBarWidth/tempHealth;
+       GreenfootImage myImage = getImage();
+       myImage.setColor(Color.WHITE);
+       myImage.drawRect(0, 0, healthBarWidth + 1, healthBarHeight + 1);
+       myImage.setColor(Color.RED);
+       myImage.fillRect(1, 1, health * pixelsPerHealthPoint, healthBarHeight);
+        //getWorld().addObject(new fullHealthBar(),getX(),getY() -50);
+        /*
         if (health == 12)
        {
            getWorld().addObject(new fullHealthBar(),getX(),getY() -50);
@@ -70,5 +80,6 @@ public class zombie extends Animatedzombie
        {
            getWorld().addObject(new oneFourthHealthBar(),getX(),getY() -50);
        }
+       */
     }
 }

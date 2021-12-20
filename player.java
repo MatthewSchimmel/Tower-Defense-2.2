@@ -307,7 +307,7 @@ public class player extends AnimatedActor
                     } else if(wait == 2899) // final boss
                     {
                     getWorld().addObject(new superzombie(),1599,Greenfoot.getRandomNumber(700)+100);
-                    getWorld().addObject(new HealthBar(), 920,50);
+                    getWorld().addObject(new superHealthBar(), 920,50);
                     }
             }
         }
