@@ -19,7 +19,8 @@ To Do's:
 0.) there is a bug where the upgrade level and health of the superzombie are saved, even when the scenario is reset. Only compiling works.
 1.) Consense and Update code
 	i.) See if I can make the health bar of the zombies an organic rectangle method. If it's possible for the final boss, just find a way to move it around and attach
-	    the objects to the actual zombies. (possibly use "this." keyword?)
+	    the objects to the actual zombies. (possibly use "this." keyword?). make sure to include the regualar zombie and superzombie healthbar in one class, taking
+	    things like healthBarWidth as class parameters
 	- possibly decrease the scope of variables to make run faster? some varibles can just be instance/method variables.
 	ii.)See if you can change the font of the upgrade screen. Something with appreciated style could replace the very many classes with organic numbers.
 	    New logic would be necessary, but would greatly trim down the game.

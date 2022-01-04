@@ -50,16 +50,16 @@ public class zombie extends Animatedzombie
     }
     public void update()
     {
-        int tempHealth = 20;
-       int healthBarWidth = 80;
-       int healthBarHeight = 10;
-       int pixelsPerHealthPoint = healthBarWidth/tempHealth;
+        final int tempHealth = 12; //only value it seems to align with
+       final int healthBarWidth = 60; //only value it seems to align with
+       final int healthBarHeight = 10;
+       final int pixelsPerHealthPoint = healthBarWidth/tempHealth;
        GreenfootImage myImage = getImage();
        myImage.setColor(Color.WHITE);
        myImage.drawRect(0, 0, healthBarWidth + 1, healthBarHeight + 1);
        myImage.setColor(Color.RED);
        myImage.fillRect(1, 1, health * pixelsPerHealthPoint, healthBarHeight);
-        //getWorld().addObject(new fullHealthBar(),getX(),getY() -50);
+       //getWorld().addObject(new fullHealthBar(),getX(),getY() -50);
         /*
         if (health == 12)
        {

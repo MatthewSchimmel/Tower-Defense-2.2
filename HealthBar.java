@@ -1,35 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HealthBar extends Actor
 {
-    int num = 2;
-    int health = 20;
-    int healthBarWidth = 80;
-    int healthBarHeight = 10;
-    int pixelsPerHealthPoint = healthBarWidth/health;
-    public void HealthBar(){
-        draw();
+    boolean yesno = false;
+    public void HealthBar(int health){
+        int realhealth = health;
     }
     public void act()
     {
-        draw();
-        destruct();
+       final int tempHealth = 12; //only value it seems to align with
+       final int healthBarWidth = 60; //only value it seems to align with
+       final int healthBarHeight = 10;
+       final int pixelsPerHealthPoint = healthBarWidth/tempHealth;
+       GreenfootImage myImage = getImage();
+       myImage.setColor(Color.WHITE);
+       myImage.drawRect(14, -10, healthBarWidth + 1, healthBarHeight + 1);
+       myImage.setColor(Color.RED);
+       myImage.fillRect(1, 1, 12 * pixelsPerHealthPoint, healthBarHeight);
+        remove();
     }
-    public void draw(){
-        setImage(new GreenfootImage(healthBarWidth + 2, healthBarHeight + 2));
-        GreenfootImage myImage = getImage();
-        myImage.setColor(Color.WHITE);
-        myImage.drawRect(0, 0, healthBarWidth + 1, healthBarHeight + 1);
-        myImage.setColor(Color.RED);
-        myImage.fillRect(1, 1, health * pixelsPerHealthPoint, healthBarHeight);
-    }
-    public void destruct(){
-        if (num < 0)
-        {
+    public void remove(){
+        if (yesno == false){
+            yesno = true;
+        } else {
             getWorld().removeObject(this);
-        }
-         else
-        {
-           num--;
         }
     }
 }
