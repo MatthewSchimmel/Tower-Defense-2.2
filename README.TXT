@@ -1,9 +1,3 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
 PROJECT TITLE: Tower Defense game
 The purpose of this project is to complete the "create" part of the college board project, and to have a fun game to play. Version 1 was created during freshman year
 of highschool for the final project. It has been expanded upon in free time since then.
