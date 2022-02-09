@@ -14,7 +14,7 @@ AUTHOR: Matthew R. Schimmel
 USER INSTRUCTIONS: Tips pop up when you start the game. Press shift for cheats menu
 
 Patch Notes:
- - 
+ Finally found a way to integrate a more native health bar, but it's not airtight.
 To Do's:
 0.) there is a bug where the upgrade level and health of the superzombie are saved, even when the scenario is reset. Only compiling works.
 1.) Consense and Update code
