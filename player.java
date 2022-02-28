@@ -23,6 +23,8 @@ public class player extends AnimatedActor
      */
     public void act() 
     {
+        checkPause();
+        devTools();
        animate();
        reload();
        upgrade();
@@ -144,7 +146,17 @@ public class player extends AnimatedActor
         }
       }
     }
-    public void checkKills() 
+    public void checkPause(){
+        // Check if pause == false, call the methods that are only called when pause is
+        //equal to false. Stops from clogging the main method when paused.
+    }
+    public void devTools(){
+        if (Greenfoot.isKeyDown("5"))
+        {
+            wait = 2898;
+        }
+    }
+    public void checkKills() //MOVE TO SWITCH STATEMENT
     {// at intervals of kills, gives the player another upgrade point and displays the options
         if (kills == 3)
         {
@@ -178,9 +190,10 @@ public class player extends AnimatedActor
             getWorld().addObject(new upgradeScreen(), 933,374);
         }
     }
-    public void upgrade() // allows the player to spend his upgrade points
+    public void upgrade() // allows the player to spend his/her upgrade points
     {
-        if (Greenfoot.isKeyDown("3") && upgradePoints > 0 && playerSpeedUpgradeLevel < 4)
+        if (upgradePoints > 0){
+        if (Greenfoot.isKeyDown("3") && playerSpeedUpgradeLevel < 4)
         {
             playerSpeed = playerSpeed + 3;
             upgradePoints--;
@@ -188,7 +201,7 @@ public class player extends AnimatedActor
             upgradeScreen.bolean = false;
             destroyBoolean = true;
         }
-        if (Greenfoot.isKeyDown("2") && upgradePoints > 0 && arrowDamageUpgradeLevel < 4)
+        if (Greenfoot.isKeyDown("2") && arrowDamageUpgradeLevel < 4)
         {
             arrowDamageUpgradeLevel++;
             updateArrowDamage();
@@ -196,7 +209,7 @@ public class player extends AnimatedActor
             upgradeScreen.bolean = false;
             destroyBoolean = true;
         }
-        if (Greenfoot.isKeyDown("1") && upgradePoints > 0 && fireRateUpgradeLevel < 4)
+        if (Greenfoot.isKeyDown("1") && fireRateUpgradeLevel < 4)
         {
              setFireRate = setFireRate - 15;
              upgradePoints--;
@@ -204,15 +217,16 @@ public class player extends AnimatedActor
              upgradeScreen.bolean = false;
              destroyBoolean = true;
         }
-         if (Greenfoot.isKeyDown("4") && upgradePoints > 0)
+         if (Greenfoot.isKeyDown("4"))
         {
              upgradePoints--;
              extraChances++;
              upgradeScreen.bolean = false;
              destroyBoolean = true;
         }
+        }
     }
-    public void updateArrowDamage() {
+    public void updateArrowDamage() { // switch
         if (arrowDamageUpgradeLevel == 2)
         {
             arrowDamage = 4;
@@ -233,7 +247,7 @@ public class player extends AnimatedActor
         {
             Greenfoot.stop();
         }
-        // spawns waves of enemies using a new number guesser to reduce 'if' statements ran
+        // spawns waves of enemies using a new number guesser to reduce 'if' statements ran.
         if(wait < 1750)
         {
             if(wait < 925 )
@@ -307,7 +321,7 @@ public class player extends AnimatedActor
                     } else if(wait == 2899) // final boss
                     {
                     getWorld().addObject(new superzombie(),1599,Greenfoot.getRandomNumber(700)+100);
-                    getWorld().addObject(new superHealthBar(), 920,50);
+                    getWorld().addObject(new HealthBar(), 920,50);
                     }
             }
         }
